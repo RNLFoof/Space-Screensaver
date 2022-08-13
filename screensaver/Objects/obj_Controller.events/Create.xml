@@ -13,17 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">//view_wview[0] /= 1;
-//view_hview[0] /= 1;
-
-//mousegrace = true;
-//alarm[3] = 5;
-
-h = 0.7196969696969697*255;
-s = 0.33165829145728637*255;
-v = 0.7803921568627451*255;
-            
-mouse_start_x = mouse_x;
+        <argument kind="STRING">mouse_start_x = mouse_x;
 mouse_start_y = mouse_y;
 
 execute_file("S:\Code\django\clock\color.txt");
@@ -42,6 +32,12 @@ camx = 0;
 camy = 0;
 cammultiplier = 10;
 
+// Uncolored stuff, made once
+scr_StreakerTailParticle();
+global.streakertailparticlesystem = particlesystem;
+global.streakertailparticletype = particletype;
+
+// Colored stuff, might change
 // The systems are made once. The types are refreshed when the color changes.
 global.streakerparticlesystem = part_system_create();
 part_system_depth(global.streakerparticlesystem, 9999);
@@ -50,10 +46,6 @@ h = -1;
 s = -1
 v = -1;
 scr_AllColoredParticles();
-
-scr_StreakerTailParticle();
-global.streakertailparticlesystem = particlesystem;
-global.streakertailparticletype = particletype;
 </argument>
       </arguments>
     </action>
