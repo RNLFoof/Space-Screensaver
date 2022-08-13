@@ -18,7 +18,7 @@
     part_particles_create(global.streakerparticlesystem,
                 x,
                 y,
-                global.streakerparticletype,strength);
+                particletype,strength);
     part_particles_create(global.streakertailparticlesystem,
                 x,
                 y,
@@ -36,7 +36,7 @@ else
             lengthdir_y(
                 ds_list_find_value(twindises,i),
                 twindir*ds_list_find_value(twindirmultis,i)+(360/twincount*i));
-        part_particles_create(global.streakerparticlesystem,partx,party,global.streakerparticletype,max(1,strength/twincount));
+        part_particles_create(global.streakerparticlesystem,partx,party,particletype,max(1,strength/twincount));
         part_particles_create(global.streakertailparticlesystem,partx,party,global.streakertailparticletype,1);
     };
 };
