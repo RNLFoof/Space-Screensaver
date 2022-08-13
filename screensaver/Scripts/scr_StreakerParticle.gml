@@ -20,8 +20,7 @@ speedmultiplier = min(
     random_range(1, 4),
 )*ss;
 // Particle
-particlesystem = part_system_create();
-particletype = part_type_create();
+scr_create_or_replace_part_type("particletype");
 part_type_shape(particletype,pt_shape_disk);
 if irandom(5) == 0
 {
@@ -42,4 +41,3 @@ part_type_life(particletype, 30,90);
 part_type_speed(particletype, 0.1*speedmultiplier, 0.5*speedmultiplier, -0.01, 0);
 part_type_direction(particletype, 0, 360, 0, 0);
 part_type_orientation(particletype, 0, 360, 0, 0, false);
-part_system_depth(particlesystem, 9999);

@@ -7,5 +7,5 @@
   <rangeMax>127</rangeMax>
   <size>20</size>
   <charset>0</charset>
-  <antialias>0</antialias>
+  <antialias>4</antialias>
 </font>

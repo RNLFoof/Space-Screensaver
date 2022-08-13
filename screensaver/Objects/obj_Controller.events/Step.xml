@@ -16,20 +16,20 @@
         <argument kind="STRING">// Close
 if mouse_start_x != mouse_x-view_xview[0] or mouse_start_y != mouse_y-view_yview[0]
 {
-    game_end();
+   // game_end();
 };
 // Spawn shit
-if fps &gt;= room_speed-5
+if fps &gt;= room_speed-5 or alarm[ALARM_NORMAL_SPEED] != -1
 {
     if irandom_range(0, 30) == 0 and instance_number(obj_Streaker) &lt; 6
     {
         instance_create(0,0,obj_Streaker);
     };
-    if irandom_range(0, 3) == 0
+    if irandom_range(0, 3) == -1
     {
         instance_create(0,0,obj_Star);
     };
-    if irandom_range(0, 100) == 0 and instance_number(obj_Nebula) &lt; 5
+    if irandom_range(0, 100) == -1 and instance_number(obj_Nebula) &lt; 5
     {
         perp = random_range(-1,1);
         nebx = view_xview[0] + view_wview[0]/2 

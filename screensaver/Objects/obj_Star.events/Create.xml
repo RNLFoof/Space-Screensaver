@@ -15,7 +15,7 @@
       <arguments>
         <argument kind="STRING">hrange = 15;
 
-s = 90/fps
+s = 90/(fps+0.01);
 life = random_range(90*0.5, 90*10)*s;
 maxsize = min(
     random_range(0.1,0.5),

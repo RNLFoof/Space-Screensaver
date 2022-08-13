@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
+  <resource name="scr_AllParticles" type="RESOURCE"/>
   <resource name="scr_StreakerParticle" type="RESOURCE"/>
   <resource name="scr_StreakerTailParticle" type="RESOURCE"/>
+  <resource name="scr_create_or_replace_part_type" type="RESOURCE"/>
 </resources>
