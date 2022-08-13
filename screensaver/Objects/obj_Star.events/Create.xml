@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">hrange = 15;
+
+s = 90/fps
+life = random_range(90*0.5, 90*10)*s;
+maxsize = min(
+    random_range(0.1,0.5),
+    random_range(0.1,0.5),
+    random_range(0.1,0.5),
+);
+
+
+particlesystem = part_system_create();
+particletype = part_type_create();
+part_type_sprite(particletype,spr_Star,0,0,1);
+part_type_blend(particletype, 1);
+//part_type_color1(particletype, random(255*255*255));
+part_type_color_hsv(particletype,obj_Controller.h-hrange,obj_Controller.h+hrange,0,20,245,255);
+part_type_size(particletype,0,0,maxsize/life,0);
+part_type_alpha2(particletype, 1, 0);
+part_type_life(particletype, life, life);
+part_type_orientation(particletype, 0, 360, random_range(-5*s,5*s), 0, false);
+part_system_depth(particlesystem, 0);
+
+if x == 0
+{
+    x = view_xview[0] + view_wview[0]/2 + lengthdir_x(random(view_wview[0]*1), random(360));
+    y = view_yview[0] + view_hview[0]/2 + lengthdir_y(random(view_wview[0]*1), random(360));
+};
+part_particles_create(particlesystem,
+    x,y,
+    particletype,1);
+    
+alarm[0] = 90*10;
+
+event_inherited();
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

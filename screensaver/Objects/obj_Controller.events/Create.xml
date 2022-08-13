@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">//view_wview[0] /= 1;
+//view_hview[0] /= 1;
+
+//mousegrace = true;
+//alarm[3] = 5;
+
+h = 0.7196969696969697*255;
+s = 0.33165829145728637*255;
+v = 0.7803921568627451*255;
+            
+mouse_start_x = mouse_x;
+mouse_start_y = mouse_y;
+
+execute_file("S:\Code\django\clock\color.txt");
+alarm[2] = 90*3;
+
+truespeed = 0;
+goalspeed = 0;
+trueangplus = 0;
+goalangplus = 0;
+togoalfeetbricks = 10000;
+direction = random(360);
+alarm[0] = 1;
+alarm[1] = 2;
+
+camx = 0;
+camy = 0;
+cammultiplier = 10;
+
+scr_StreakerParticle();
+global.streakerparticlesystem = particlesystem;
+global.streakerparticletype = particletype;
+
+scr_StreakerTailParticle();
+global.streakertailparticlesystem = particlesystem;
+global.streakertailparticletype = particletype;
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

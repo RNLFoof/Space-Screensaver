@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">event_inherited();
+vunerability = 600;
+alarm[11] = 90*30;
+
+image_angle = random(360);
+// Shape
+shape = path_add();
+path_set_kind(shape, 1);
+points = irandom_range(10,20);
+
+pointx = x;
+pointy = y;
+for(i=0; i &lt; points; i += 1)
+{
+    path_add_point(shape,pointx,pointy,random_range(25,100));
+    pointx += lengthdir_x(random_range(50, 550), random(360));
+    pointy += lengthdir_y(random_range(50, 550), random(360));
+    if irandom(10) == 0
+    {
+        pointx = x;
+        pointy = y;
+    };
+}
+
+// Presets
+hrange = 15;
+srange = 5;
+vrange = 10;
+hplus = random(30);
+
+// Particles
+s = 90/fps
+
+particlesystem = part_system_create();
+particletype = part_type_create();
+part_type_shape(particletype,pt_shape_explosion);
+part_type_blend(particletype, 0);
+part_type_color_hsv(particletype,obj_Controller.h-hrange+hplus,obj_Controller.h+hrange+hplus,max(0,obj_Controller.s-srange),min(255, obj_Controller.s+srange),0,min(255,obj_Controller.v+vrange));
+// part_type_color1(particletype, random(255*255*255));
+part_type_size(particletype,1,10,0,0);
+part_type_alpha3(particletype, 0,0.25/4, 0);
+lifemultiplier = 10*s;
+part_type_life(particletype, 90*2*lifemultiplier, 90*5*lifemultiplier);
+alarm[0] = 90*5*lifemultiplier;
+part_type_orientation(particletype, 0, 360, 0, 0, false);
+part_type_direction(particletype, 0, 360, 0, 0);
+part_type_speed(particletype, 0, 0.05*s, 0, 0);
+part_system_depth(particlesystem, 1001);
+// Spawn them in
+//show_message(path_get_length(shape)/500);
+for(i=0; i &lt; path_get_length(shape)/300; i += 1)
+{
+    pathpointa = random(1);
+    pathpointb = random(1);
+    ratio = random(1);
+    for(ii=0; ii &lt; random(5); ii += 1)
+    {
+        part_particles_create(particlesystem,
+        
+        (
+            path_get_x(shape,pathpointa) -
+            (
+                path_get_x(shape,pathpointa)-
+                path_get_x(shape,pathpointb)
+            )*ratio
+        )
+        +lengthdir_x(random(100),random(360)),
+        
+        (
+            path_get_y(shape,pathpointa) -
+            (
+                path_get_y(shape,pathpointa)-
+                path_get_y(shape,pathpointb)
+            )*ratio
+        )
+        +lengthdir_y(random(100),random(360)),
+        
+        particletype,1);
+    };
+}
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

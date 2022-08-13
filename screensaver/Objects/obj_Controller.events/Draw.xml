@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="DRAW" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">draw_set_color(c_white);
+draw_set_font(fntFat);
+drawatx = 250;
+drawaty = 0;
+draw_text(view_xview[0], view_yview[0]+drawaty, "truespeed");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, truespeed);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "trueangplus");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, trueangplus);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "direction");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, direction);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "goalspeed");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, goalspeed);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "goalangplus");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, goalangplus);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "fps");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, fps);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "instance_count");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, instance_count);
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "Streakers");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, instance_number(obj_Streaker));
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "Stars");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, instance_number(obj_Star));
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "Nebulas");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, instance_number(obj_Nebula));
+drawaty += 20;
+draw_text(view_xview[0], view_yview[0]+drawaty, "Suns");
+draw_text(view_xview[0]+drawatx, view_yview[0]+drawaty, instance_number(obj_Sun));
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<event category="CREATE" id="0">
+  <actions>
+    <action id="603" library="1">
+      <!--action name: Code-->
+      <kind>CODE</kind>
+      <allowRelative>false</allowRelative>
+      <question>false</question>
+      <canApplyTo>true</canApplyTo>
+      <actionType>CODE</actionType>
+      <functionName/>
+      <relative>false</relative>
+      <not>false</not>
+      <appliesTo>.self</appliesTo>
+      <arguments>
+        <argument kind="STRING">event_inherited();
+alarm[11] = 90*6;
+
+// Size
+scale = 96*3;
+image_xscale = scale/32;
+image_yscale = scale/32;
+
+// Particle presets
+s = 90/fps
+hrange = 15;
+srange = 5;
+vrange = 10;
+
+hplus = random(3);
+if irandom(5) == 0
+{
+    hplus = min(random(100),random(100),random(100));
+};
+if irandom(1) == 0
+{
+    hplus *= -1;
+};
+
+speedmultiplier = 10*s;
+// Particle
+particlesystem = part_system_create();
+particletype = part_type_create();
+part_type_shape(particletype,pt_shape_disk);
+if irandom(5) == 0
+{
+    part_type_shape(particletype,pt_shape_square);
+    if irandom(5) == 0
+    {
+        part_type_shape(particletype,pt_shape_ring);
+    };
+};
+part_type_blend(particletype, 1);
+//part_type_color1(particletype, random(255*255*255));
+part_type_color_hsv(particletype,obj_Controller.h-hrange+hplus,obj_Controller.h+hrange+hplus,max(0,obj_Controller.s-srange),min(255, obj_Controller.s+srange),max(0,obj_Controller.v-vrange),min(255,obj_Controller.v+vrange));
+//part_type_color_hsv(particletype,obj_Controller.h-hrange+hplus,obj_Controller.h+hrange+hplus,0,min(255, obj_Controller.s+srange),max(0,obj_Controller.v-vrange),255);
+part_type_size(particletype,1.5,3,-0.005*s,0);
+part_type_size(particletype,7,10,-0.005*s,0);
+part_type_alpha2(particletype, 1, 0);
+part_type_speed(particletype, random_range(0.5, 1)*speedmultiplier, 1*speedmultiplier, -0.1, 0);
+part_type_direction(particletype, 0, 360, 0, 0);
+part_type_orientation(particletype, 0, 360, 0, 0, false);
+part_system_depth(particlesystem, 9999);
+
+lifemultiplierthatmakesitscaleproperly = scale/speedmultiplier / 2;
+part_type_life(particletype, lifemultiplierthatmakesitscaleproperly, lifemultiplierthatmakesitscaleproperly);
+
+//x = view_xview[0] + view_wview[0]/2 + lengthdir_x(random(view_wview[0]*1), random(360));
+//y = view_yview[0] + view_hview[0]/2 + lengthdir_y(random(view_wview[0]*1), random(360));
+
+perp = random_range(-1,1);
+x = view_xview[0] + view_wview[0]/2 
+            + lengthdir_x(900*obj_Controller.truespeed, obj_Controller.direction)
+      //      + lengthdir_x(room_width*perp, obj_Controller.direction+90);
+y = view_yview[0] + view_hview[0]/2
+    + lengthdir_y(900*obj_Controller.truespeed, obj_Controller.direction)
+    //+ lengthdir_y(room_width*perp, obj_Controller.direction+90);
+</argument>
+      </arguments>
+    </action>
+  </actions>
+</event>

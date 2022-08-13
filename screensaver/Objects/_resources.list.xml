@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="obj_Controller" type="RESOURCE"/>
+  <resource name="obj_BlowUpOffscreen" type="RESOURCE"/>
+  <resource name="obj_Streaker" type="RESOURCE"/>
+  <resource name="obj_Star" type="RESOURCE"/>
+  <resource name="obj_Nebula" type="RESOURCE"/>
+  <resource name="obj_Sun" type="RESOURCE"/>
+</resources>

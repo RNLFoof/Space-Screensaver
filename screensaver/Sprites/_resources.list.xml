@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<resources>
+  <resource name="spr_Star" type="RESOURCE"/>
+  <resource name="spr_Square" type="RESOURCE"/>
+  <resource name="spr_Circle" type="RESOURCE"/>
+</resources>
