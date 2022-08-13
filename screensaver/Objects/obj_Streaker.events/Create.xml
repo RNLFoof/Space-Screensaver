@@ -57,7 +57,7 @@ x += view_xview[0];
 y += view_yview[0];
 
 // Type
-particletype = global.streakerparticletype[irandom(global.streakerparticletypes-1)]
+particletype = global.streakerparticletype[irandom(streakerparticletypes-1)]
 
 // Movement
 speed = random_range(5, 20);
