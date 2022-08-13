@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <constants>
-  <constant name="streakerparticletypes" value="5"/>
+  <constant name="streakerparticletypes" value="50"/>
 </constants>
