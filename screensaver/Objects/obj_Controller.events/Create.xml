@@ -27,7 +27,7 @@ mouse_start_x = mouse_x;
 mouse_start_y = mouse_y;
 
 execute_file("S:\Code\django\clock\color.txt");
-alarm[2] = 90*3;
+//alarm[2] = 90*3;
 
 truespeed = 0;
 goalspeed = 0;
@@ -42,9 +42,14 @@ camx = 0;
 camy = 0;
 cammultiplier = 10;
 
-scr_StreakerParticle();
-global.streakerparticlesystem = particlesystem;
-global.streakerparticletype = particletype;
+// The systems are made once. The types are refreshed when the color changes.
+global.streakerparticlesystem = part_system_create();
+part_system_depth(global.streakerparticlesystem, 9999);
+
+h = -1;
+s = -1
+v = -1;
+scr_AllColoredParticles();
 
 scr_StreakerTailParticle();
 global.streakertailparticlesystem = particlesystem;
