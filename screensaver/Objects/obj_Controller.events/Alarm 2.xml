@@ -13,8 +13,7 @@
       <not>false</not>
       <appliesTo>.self</appliesTo>
       <arguments>
-        <argument kind="STRING">
-execute_file("S:\Code\django\clock\color.txt");
+        <argument kind="STRING">scr_AllColoredParticles();
 alarm[2] = 90;
 </argument>
       </arguments>

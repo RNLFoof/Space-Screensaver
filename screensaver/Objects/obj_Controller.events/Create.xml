@@ -17,7 +17,7 @@
 mouse_start_y = mouse_y;
 
 execute_file("S:\Code\django\clock\color.txt");
-//alarm[2] = 90*3;
+alarm[2] = 90;
 
 truespeed = 0;
 goalspeed = 0;
@@ -42,9 +42,13 @@ global.streakertailparticletype = particletype;
 global.streakerparticlesystem = part_system_create();
 part_system_depth(global.streakerparticlesystem, 9999);
 
+// Initials so that the first run  happens properly
 h = -1;
 s = -1
 v = -1;
+for (i=0;i&lt;streakerparticletypes;i+=1) {
+    global.streakerparticletype[i] = -1
+}
 scr_AllColoredParticles();
 </argument>
       </arguments>
