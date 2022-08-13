@@ -16,7 +16,7 @@
         <argument kind="STRING">// Close
 if mouse_start_x != mouse_x-view_xview[0] or mouse_start_y != mouse_y-view_yview[0]
 {
-    game_end();
+    // game_end();
 };
 // Spawn shit
 if fps &gt;= room_speed-5
